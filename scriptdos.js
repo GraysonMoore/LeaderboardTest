@@ -17,10 +17,10 @@ function load() {
       const redirect = "error";
       try {
         await fetch(path, { method, headers, body, redirect });
-        //playername = username;
-        //localStorage.setItem("playername", playername);
+        playername = username;
+        localStorage.setItem("playername", playername);
         //location.href = "leaderboard.html";
-      //} catch(ex) {
-        //alert("That name is already being used");
+      } catch(ex) {
+        alert("That name is already being used");
       }
     };
