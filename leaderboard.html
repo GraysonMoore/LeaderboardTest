@@ -57,5 +57,28 @@
       <input type="text" id="name" placeholder="First Name, Last Intial Optional" class="nameplace"><br>
       <button onclick="createAccount()" class="createaccount">OK<button>
     {{/private}}
+        
+          <script type="module">
+            // Import the functions you need from the SDKs you need
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+            // TODO: Add SDKs for Firebase products that you want to use
+            // https://firebase.google.com/docs/web/setup#available-libraries
+
+            // Your web app's Firebase configuration
+            const firebaseConfig = {
+              apiKey: "AIzaSyDAX5sF_wwn7--4KMQZod5j_xzS-jEczcQ",
+              authDomain: "freeriderjumps.firebaseapp.com",
+              projectId: "freeriderjumps",
+              storageBucket: "freeriderjumps.appspot.com",
+              messagingSenderId: "668259605978",
+              appId: "1:668259605978:web:6085631e7ad7d1335e74e3"
+            };
+
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+          </script>
+        
+  
   </body>
+  
 </html>
