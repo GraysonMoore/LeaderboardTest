@@ -35,37 +35,6 @@
         justify-content:center;
       }
     </style>
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database.js">
-      
-      /*window.playername = "{{username}}" || localStorage.getItem("playername");
-      function load() {
-              const username = localStorage.getItem("playername");
-              document.getElementById("name").value = username;
-              const bestscore = localStorage.getItem("bestever");
-              console.log(bestscore);
-            };
-
-            async function createAccount() {
-              const username = document.getElementById("name").value;
-              if(!username) {
-                return alert("Enter Your Name");
-              }
-              const path = "https://freeriderjumps-default-rtdb.firebaseio.com/";
-              const method = "POST";
-              const headers = {"Content-Type": "application/json"}
-              const body = JSON.stringify({ username });
-              const redirect = "error";
-              try {
-                await fetch(path, { method, headers, body, redirect });
-                playername = username;
-                localStorage.setItem("playername", playername);
-                //location.href = "leaderboard.html";
-              } catch(error) {
-                alert("Didn't post");
-              }
-            };*/
-    </script>
     
     <title>Free Rider Leaders</title>
   </head>
@@ -100,7 +69,7 @@
             };
 
             // Initialize Firebase
-            const app = initializeApp(firebaseConfig);
+            firebase.initializeApp(firebaseConfig);
             
             const username = document.getElementById("name").value;
             const bestscore = localStorage.getItem("bestever").value;
@@ -108,8 +77,15 @@
             
             import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-database.js";
             const db = getDatabase();
-
-            function InsertData(username, bestscore) {
+            
+            var firebaseRef = firebase.database().ref("users");
+            
+            document.querySelector("#insertdata").addEventListener("click", ()=>{
+              const username = document.getElementById("name").value;
+              firebaseRef.push(username);
+            });
+            
+            /*function InsertData(username, bestscore) {
               set(ref(db, "user/"+username), {
                 username: username,
                 score: bestscore
@@ -121,7 +97,7 @@
                 alert("unsuccessful, error" +error);
               });
             }
-            insBtn.addEventListener("click",InsertData);
+            insBtn.addEventListener("click",InsertData);*/
           </script>
         
   
