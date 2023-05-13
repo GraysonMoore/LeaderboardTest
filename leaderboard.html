@@ -35,18 +35,7 @@
         justify-content:center;
       }
     </style>
-    <script type="module">
-      import { getDatabase, ref, set } from "https://freeriderjumps-default-rtdb.firebaseio.com/";
-
-      function writeUserData(username, score) {
-        const db = getDatabase();
-        set(ref(db, 'users/' + username), {
-          username: username,
-          score: score
-        });
-      }
-      
-      
+    <script>
       
       window.playername = "{{username}}" || localStorage.getItem("playername");
       function load() {
@@ -105,6 +94,7 @@
             const firebaseConfig = {
               apiKey: "AIzaSyDAX5sF_wwn7--4KMQZod5j_xzS-jEczcQ",
               authDomain: "freeriderjumps.firebaseapp.com",
+              databaseURL: "https://freeriderjumps-default-rtdb.firebaseio.com",
               projectId: "freeriderjumps",
               storageBucket: "freeriderjumps.appspot.com",
               messagingSenderId: "668259605978",
@@ -115,6 +105,15 @@
             const app = initializeApp(firebaseConfig);
             
             
+            import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-database.js";
+
+            function writeUserData(username, score) {
+              const db = getDatabase();
+              set(ref(db, 'users/' + username), {
+                username: username,
+                score: score
+              });
+            }
           </script>
         
   
