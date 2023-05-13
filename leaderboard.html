@@ -82,7 +82,11 @@
             
             document.querySelector("#insertdata").addEventListener("click", ()=>{
               const username = document.getElementById("name").value;
-              db.push(username);
+              const bestscore = localStorage.getItem("bestever").value;
+              set(ref(db, "user/" + username), {
+                username: username,
+                score: bestscore
+              })
             });
             
             /*function InsertData(username, bestscore) {
