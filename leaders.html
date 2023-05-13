@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      window.playername = "{{username}}" || localStorage.getItem("playername");
+    </script>
+    <script src="script.js"></script>
+    <style>
+      body {
+        background-color:lightgray;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+      }
+      h1 {
+        text-align:center;
+        text-decoration:underline;
+      }
+      button {
+        background-color:blue;
+        color:lightblue;
+        border-radius:10px;
+      }
+      .center {
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        gap:10px;
+      }
+      
+    </style>
+    <title>Free Rider Leaders</title>
+  </head>
+  <body>
+    <h1>Free Rider Leaders:</h1>
+    
+    <div class="center" id="leaders">
+    </div>
+    
+    <div>
+      <a href="index.html"><button id="close">Close<button></a>
+    </div>
+  </body>
+</html>
