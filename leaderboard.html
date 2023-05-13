@@ -78,11 +78,11 @@
             import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-database.js";
             const db = getDatabase();
             
-            var firebaseRef = firebase.database().ref("users");
+            //var firebaseRef = firebase.database().ref("users");
             
             document.querySelector("#insertdata").addEventListener("click", ()=>{
               const username = document.getElementById("name").value;
-              firebaseRef.push(username);
+              db.push(username);
             });
             
             /*function InsertData(username, bestscore) {
