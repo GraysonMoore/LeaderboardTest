@@ -1,6 +1,8 @@
 function load() {
       const name = localStorage.getItem("playername");
       document.getElementById("name").value = name;
+      const bestscore = localStorage.getItem("bestever");
+      console.log(bestscore);
     };
 
     async function createAccount() {
