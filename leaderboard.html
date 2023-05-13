@@ -2,14 +2,22 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Leaderboard</title>
     <style>
       body {
         background-color:lightgray;
         text-align:center;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
       }
       h1 {
+        text-align:center;
         text-decoration:underline;
+      }
+      button {
+        background-color:blue;
+        color:lightblue;
+        border-radius:10px;
       }
       .nameplace {
         width: 500px;
@@ -20,15 +28,29 @@
         font-size:50px;
         text-align:center;
       }
+      .center {
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+      }
     </style>
-    <script>
-      window.playername = '{{username}}' || localStorage.getItem('playername');
-    </script>
-    <script src='script.js'></script>
+    <title>Free Rider Leaders</title>
   </head>
   <body onload="load()">
-    <h3>Enter your name to get a spot on the leaderboard</h3>
-    <input type="text" id="name" placeholder="First Name, Last Intial Optional" class="nameplace"><br>
-    <button onclick="createAccount()" class="createaccount">OK<button>
+    {{#private}}
+      <h1>Free Rider Leaders:</h1><br>
+
+      <div class="center" id="leaders">
+      </div><br>
+
+      <div>
+        <a href="index.html"><button id="close">Close<button></a>
+      </div>
+    {{/private}}
+    {{^private}}
+      <h3>Enter your name to get a spot on the leaderboard</h3>
+      <input type="text" id="name" placeholder="First Name, Last Intial Optional" class="nameplace"><br>
+      <button onclick="createAccount()" class="createaccount">OK<button>
+    {{/private}}
   </body>
 </html>
