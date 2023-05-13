@@ -100,15 +100,15 @@
             // Initialize Firebase
             const app = initializeApp(firebaseConfig);
             
-            var username = document.getElementById("name").value;
-            var bestscore = localStorage.getItem("bestever").value;
-            var insBtn = document.getElementById("insertdata");
+            const username = document.getElementById("name").value;
+            const bestscore = localStorage.getItem("bestever").value;
+            const insBtn = document.getElementById("insertdata");
             
             import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-database.js";
             const db = getDatabase();
 
             function InsertData(username, bestscore) {
-              set(ref(db, "player"), {
+              set(ref(db, "user/"+username), {
                 username: username,
                 score: bestscore
               })
