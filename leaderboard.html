@@ -33,8 +33,11 @@
         justify-content:center;
       }
     </style>
-    <title>Free Rider Leaders</title>
+    <script>
+      window.playername = "{{username}}" || localStorage.getItem("playername");
+    </script>
     <script src="script.js"></script>
+    <title>Free Rider Leaders</title>
   </head>
   <body onload="load()">
     {{#private}}
