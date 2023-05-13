@@ -102,7 +102,7 @@
             
             var username = document.getElementById("name").value;
             var bestscore = localStorage.getItem("bestever").value;
-            var insBtn = document.getElementById("insertdata").value;
+            var insBtn = document.getElementById("insertdata");
             
             import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-database.js";
             const db = getDatabase();
