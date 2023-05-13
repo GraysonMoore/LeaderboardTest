@@ -36,10 +36,22 @@
       }
     </style>
     <script>
+      import { getDatabase, ref, set } from "https://freeriderjumps-default-rtdb.firebaseio.com/";
+
+      function writeUserData(username, score) {
+        const db = getDatabase();
+        set(ref(db, 'users/' + username), {
+          username: username,
+          score: score
+        });
+      }
+      
+      
+      
       window.playername = "{{username}}" || localStorage.getItem("playername");
       function load() {
-              const name = localStorage.getItem("playername");
-              document.getElementById("name").value = name;
+              const username = localStorage.getItem("playername");
+              document.getElementById("name").value = username;
               const bestscore = localStorage.getItem("bestever");
               console.log(bestscore);
             };
