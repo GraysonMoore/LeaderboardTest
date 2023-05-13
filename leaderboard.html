@@ -11,12 +11,13 @@
       h1 {
         text-decoration:underline;
       }
-      input {
+      .nameplace {
         width: 500px;
         height: 30px;
+        font-size:30px;
       }
-      #backtohome {
-        margin-bottom: 50px;
+      .createaccount {
+        font-size:50px;
         text-align:center;
       }
     </style>
@@ -26,9 +27,8 @@
     <script src='script.js'></script>
   </head>
   <body onload="load()">
-    <h1><center>Leaderboard</center></h1>
-    <input type="text" id="name" placeholder="Enter your name to have a spot on the leaderboard!" size:"30"><br>
-    <button onclick="createAccount()">OK<button><br><br><br><br>
-    <a href="index.html" id="backtohome">Close</a>
+    <h3>Enter your name to get a spot on the leaderboard</h3>
+    <input type="text" id="name" placeholder="First Name, Last Intial Optional" class="nameplace"><br>
+    <button onclick="createAccount()" class="createaccount">OK<button>
   </body>
 </html>
