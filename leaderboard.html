@@ -80,12 +80,13 @@
             const bestscore = localStorage.getItem("bestever");
             const insBtn = document.getElementById("insertdata");
             //var firebaseRef = firebase.database().ref("users");
-            console.log(bestscore);
+            
             document.querySelector("#insertdata").addEventListener("click", ()=>{
               const username = document.getElementById("name").value;
-              //const bestscore = localStorage.getItem("bestever").value;
+              const bestscore = localStorage.getItem("bestever");
               set(ref(db, "user/" + username), {
-                username: username
+                username: username,
+                bestscore: bestscore
               })
             });
             
