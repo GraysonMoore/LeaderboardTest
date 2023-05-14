@@ -77,7 +77,7 @@
             const db = getDatabase();
             
             const username = document.getElementById("name").value;
-            const bestscore = localStorage.getItem("bestever").value;
+            const bestscore = localStorage.getItem("bestever");
             const insBtn = document.getElementById("insertdata");
             //var firebaseRef = firebase.database().ref("users");
             console.log(bestscore);
@@ -89,6 +89,13 @@
               })
             });
             
+            
+            /*function load() {
+              const name = localStorage.getItem("playername");
+              document.getElementById("name").value = name;
+              const bestscore = localStorage.getItem("bestever");
+              console.log(bestscore);
+            };*/
             /*function InsertData(username, bestscore) {
               set(ref(db, "user/"+username), {
                 username: username,
