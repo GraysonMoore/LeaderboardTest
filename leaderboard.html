@@ -71,15 +71,16 @@
             // Initialize Firebase
             const app = initializeApp(firebaseConfig);
             
-            const username = document.getElementById("name").value;
-            const bestscore = localStorage.getItem("bestever").value;
-            const insBtn = document.getElementById("insertdata");
+            
             
             import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-database.js";
             const db = getDatabase();
             
+            const username = document.getElementById("name").value;
+            const bestscore = localStorage.getItem("bestever").value;
+            const insBtn = document.getElementById("insertdata");
             //var firebaseRef = firebase.database().ref("users");
-            
+            console.log(bestscore);
             document.querySelector("#insertdata").addEventListener("click", ()=>{
               const username = document.getElementById("name").value;
               //const bestscore = localStorage.getItem("bestever").value;
