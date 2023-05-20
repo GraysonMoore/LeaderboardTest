@@ -76,22 +76,23 @@
             const insBtn = document.getElementById("insertdata");
             //var firebaseRef = firebase.database().ref("users");
             
-            document.querySelector("#insertdata").addEventListener("click", async ()=>{
+            document.querySelector("#insertdata").addEventListener("click", ()=>{
               const username = document.getElementById("name").value;
               const bestscore = localStorage.getItem("bestever");
               if (!username) {
                 alert("Enter a name!");
               } else {
-                try {
-                await set(ref(db, "user/" + username), {
+                set(ref(db, "user/" + username), {
                   username: username,
                   bestscore: bestscore
                 })
-                }
-                catch(error) {
-                  alert("error");
-                }
-                location.href = "leaders.html";
+                .then(()=>{
+                  alert("data stored!");
+                })
+                .catch((error)=>{
+                  alert("unsuccessful, error" +error);
+                });
+                //location.href = "leaders.html";
               }
             });
             
