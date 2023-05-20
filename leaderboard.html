@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script>
+      if(localStorage.getItem("playersname") === null) {
+        location.href="leaderboard.html";
+      } else {
+        location.href="leaders.html";
+      }
+    </script>
     <style>
       body {
         background-color:lightgray;
