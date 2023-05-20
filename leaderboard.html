@@ -42,8 +42,8 @@
   <body>
     <div>
       <h3>Enter your name to get a spot on the leaderboard!</h3>
-      <input type="text" id="name" placeholder="First Name, Last Intial Optional" class="nameplace"><br>
-      <a href="leaders.html"><button id="insertdata" class="createaccount">OK</button></a>
+      <input type="text" id="name" placeholder="First Name, Last Intial Optional" class="nameplace"><br><br><br>
+      <button id="insertdata" class="createaccount">OK</button>
     </div>
         
   <script type="module">
@@ -77,12 +77,17 @@
             //var firebaseRef = firebase.database().ref("users");
             
             document.querySelector("#insertdata").addEventListener("click", ()=>{
-              const username = document.getElementById("name").value;
-              const bestscore = localStorage.getItem("bestever");
-              set(ref(db, "user/" + username), {
-                username: username,
-                bestscore: bestscore
-              })
+              if (!username) {
+                alert("Enter a name!");
+              } else {
+                const username = document.getElementById("name").value;
+                const bestscore = localStorage.getItem("bestever");
+                set(ref(db, "user/" + username), {
+                  username: username,
+                  bestscore: bestscore
+                })
+                location.href = "leaders.html";
+              }
             });
             
             
