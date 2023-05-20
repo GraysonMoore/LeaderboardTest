@@ -82,17 +82,17 @@
               if (!username) {
                 alert("Enter a name!");
               } else {
+                
                 set(ref(db, "user/" + username), {
                   username: username,
                   bestscore: bestscore
                 })
                 .then(()=>{
-                  alert("data stored!");
+                  location.href = "leaders.html";
                 })
                 .catch((error)=>{
                   alert("unsuccessful, error" +error);
                 });
-                //location.href = "leaders.html";
               }
             });
             
