@@ -39,5 +39,47 @@
       <div>
         <a href="index.html"><button id="close">Close</button></a>
       </div>
+    <script type="module">
+            // Import the functions you need from the SDKs you need
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+            // TODO: Add SDKs for Firebase products that you want to use
+            // https://firebase.google.com/docs/web/setup#available-libraries
+
+            // Your web app's Firebase configuration
+            const firebaseConfig = {
+              apiKey: "AIzaSyDAX5sF_wwn7--4KMQZod5j_xzS-jEczcQ",
+              authDomain: "freeriderjumps.firebaseapp.com",
+              databaseURL: "https://freeriderjumps-default-rtdb.firebaseio.com",
+              projectId: "freeriderjumps",
+              storageBucket: "freeriderjumps.appspot.com",
+              messagingSenderId: "668259605978",
+              appId: "1:668259605978:web:6085631e7ad7d1335e74e3"
+            };
+
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+            
+            
+            
+            import { getDatabase, ref, get, set, child } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-database.js";
+            const db = getDatabase();
+            
+            const username = localStorage.getItem("playersname");
+            const bestscore = localStorage.getItem("bestever");
+
+            const dbRef = ref(getDatabase());
+            get(child(dbRef, "users/")).then((snapshot) => {
+              if (snapshot.exists()) {
+                console.log(snapshot.val());
+              } else {
+                console.log("No data available");
+              }
+            }).catch((error) => {
+              console.error(error);
+            });
+            //const insBtn = document.getElementById("insertdata");
+            //var firebaseRef = firebase.database().ref("users");
+          
+  </script>
   </body>
 </html>
