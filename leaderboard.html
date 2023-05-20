@@ -77,11 +77,11 @@
             //var firebaseRef = firebase.database().ref("users");
             
             document.querySelector("#insertdata").addEventListener("click", ()=>{
+              const username = document.getElementById("name").value;
+              const bestscore = localStorage.getItem("bestever");
               if (!username) {
                 alert("Enter a name!");
               } else {
-                const username = document.getElementById("name").value;
-                const bestscore = localStorage.getItem("bestever");
                 set(ref(db, "user/" + username), {
                   username: username,
                   bestscore: bestscore
