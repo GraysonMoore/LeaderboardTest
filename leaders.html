@@ -65,6 +65,7 @@
             import { getDatabase, ref, get, set, child, query, orderByChild, update } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-database.js";
             const db = getDatabase();
             
+            console.log(localStorage.getItem("bestever"));
             function updateScore() {
               const bestscore = localStorage.getItem("bestever");
               update(ref(db, "user/" + username), {
