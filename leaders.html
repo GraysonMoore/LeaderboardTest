@@ -36,6 +36,8 @@
       <div class="center" id="leaders">
         
       </div><br>
+    
+    <button id="swift">Update</button><br><br>
 
       <div>
         <a href="index.html"><button id="close">Close</button></a>
@@ -66,7 +68,8 @@
             const db = getDatabase();
             
             console.log(localStorage.getItem("bestever"));
-            function UpdateData() {
+            
+            document.querySelector("#swift").addEventListener("click", ()=>{
               var username = localStorage.getItem("playersname");
               const bestscore = localStorage.getItem("bestever");
               update(ref(db, "user/" + username), {
@@ -78,9 +81,23 @@
                 .catch((error)=>{
                   alert("unsuccessful, error" +error);
                 });
-            }
+            });
       
-            window.onload = UpdateData();
+            /*function UpdateData() {
+              var username = localStorage.getItem("playersname");
+              const bestscore = localStorage.getItem("bestever");
+              update(ref(db, "user/" + username), {
+                  bestscore: bestscore
+                })
+                .then(()=>{
+                  alert("data updated successfully");
+                })
+                .catch((error)=>{
+                  alert("unsuccessful, error" +error);
+                });
+            }*/
+      
+            //window.onload = UpdateData();
       
       
             var list = document.getElementById("leaders");
