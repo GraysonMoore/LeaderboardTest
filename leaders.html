@@ -70,7 +70,10 @@
             const dbRef = ref(getDatabase());
             get(child(dbRef, "user/" + username)).then((snapshot) => {
               if (snapshot.exists()) {
-                console.log(snapshot.val());
+                username = snapshot.val().username;
+                bestscore = snapshot.val().bestscore;
+                console.log(username);
+                console.log(bestscore);
               } else {
                 console.log("No data available");
               }
