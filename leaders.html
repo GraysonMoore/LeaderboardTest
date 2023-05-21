@@ -66,6 +66,7 @@
             const db = getDatabase();
             
             function updateScore() {
+              const bestscore = localStorage.getItem("bestever");
               update(ref(db, "user/" + username), {
                   bestscore: bestscore
                 })
