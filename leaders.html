@@ -62,7 +62,7 @@
             
             
             
-            import { getDatabase, ref, get, set, child, query, orderByChild, update } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-database.js";
+            import { getDatabase, ref, get, set, update, child, query, orderByChild } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-database.js";
             const db = getDatabase();
             
             console.log(localStorage.getItem("bestever"));
@@ -80,7 +80,7 @@
                 });
             }
       
-            
+            window.onload = UpdateData();
       
       
             var list = document.getElementById("leaders");
@@ -116,7 +116,7 @@
                 AddAllItemsToTable(names);
               });
             }
-            window.onload = UpdateData;
+            
             window.onload = GetAllDataOnce();
             
       
