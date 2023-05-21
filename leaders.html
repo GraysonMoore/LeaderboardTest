@@ -66,9 +66,8 @@
             
             var username = localStorage.getItem("playersname");
             var bestscore = localStorage.getItem("bestever");
-            
-            const mostViewedPosts = query(ref(db, 'user'), orderByChild('bestscore'));
-            console.log(mostViewedPosts);
+            const topUserPostsRef = query(ref(db, 'user/'), orderByChild('bestscore'));
+            console.log(topUserPostsRef);
             const dbRef = ref(getDatabase());
             get(child(dbRef, "user/" + username)).then((snapshot) => {
               if (snapshot.exists()) {
