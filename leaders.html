@@ -64,11 +64,11 @@
             import { getDatabase, ref, get, set, child } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-database.js";
             const db = getDatabase();
             
-            const username = localStorage.getItem("playersname");
-            const bestscore = localStorage.getItem("bestever");
+            var username = localStorage.getItem("playersname");
+            var bestscore = localStorage.getItem("bestever");
 
             const dbRef = ref(getDatabase());
-            get(child(dbRef, "user/" + username)).then((snapshot) => {
+            get(child(dbRef, "user/")).then((snapshot) => {
               if (snapshot.exists()) {
                 username = snapshot.val().username;
                 bestscore = snapshot.val().bestscore;
