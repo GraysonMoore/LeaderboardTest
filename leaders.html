@@ -34,6 +34,7 @@
     <h1>Free Rider Leaders:</h1><br>
 
       <div class="center" id="leaders">
+        
       </div><br>
 
       <div>
@@ -63,11 +64,23 @@
             
             import { getDatabase, ref, get, set, child, query, orderByChild } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-database.js";
             const db = getDatabase();
-            var nameNumb;
             
-            function AddAllItemsToTable(TheName) {
-              nameNumb=0;
+            var list = document.getElementById("leaders");
+            function AddItemToTable(name, score) {
+              let ul = document.createElement("ul");
+              let li1 = document.createElement("li");
+              let li2 = document.createElement("li");
               
+              li1.innerHTML = name;
+              li2.innerHTML = score;
+              
+              ul.appendChild(li1);
+              ul.appendChild(li2);
+              
+              list.appendChild(ul);
+            }
+      
+            function AddAllItemsToTable(TheName) {
               TheName.forEach(element => {
                 AddItemToTable(element.name, element.score);
               });
