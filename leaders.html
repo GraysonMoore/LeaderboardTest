@@ -68,7 +68,7 @@
             var bestscore = localStorage.getItem("bestever");
 
             const dbRef = ref(getDatabase());
-            get(child(dbRef, "user/")).then((snapshot) => {
+            get(child(dbRef, "user/" + username)).then((snapshot) => {
               if (snapshot.exists()) {
                 username = snapshot.val().username;
                 bestscore = snapshot.val().bestscore;
