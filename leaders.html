@@ -66,7 +66,7 @@
             const db = getDatabase();
             
             console.log(localStorage.getItem("bestever"));
-            function updateScore() {
+            function UpdateData() {
               const bestscore = localStorage.getItem("bestever");
               update(ref(db, "user/" + username), {
                   bestscore: bestscore
@@ -113,7 +113,7 @@
                 AddAllItemsToTable(names);
               });
             }
-            window.onload = updateScore;
+            window.onload = UpdateData;
             window.onload = GetAllDataOnce;
             
       
