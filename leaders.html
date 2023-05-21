@@ -65,8 +65,16 @@
             import { getDatabase, ref, get, set, child, query, orderByChild, update } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-database.js";
             const db = getDatabase();
             
-            function updateScore () {
-              
+            function updateScore() {
+              update(ref(db, "user/" + username), {
+                  bestscore: bestscore
+                })
+                .then(()=>{
+                  //location.href = "leaders.html";
+                })
+                .catch((error)=>{
+                  alert("unsuccessful, error" +error);
+                });
             }
       
       
@@ -103,7 +111,7 @@
                 AddAllItemsToTable(names);
               });
             }
-      
+            window.onload = updateScore;
             window.onload = GetAllDataOnce;
             
       
