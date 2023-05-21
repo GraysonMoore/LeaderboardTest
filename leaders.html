@@ -62,9 +62,14 @@
             
             
             
-            import { getDatabase, ref, get, set, child, query, orderByChild } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-database.js";
+            import { getDatabase, ref, get, set, child, query, orderByChild, update } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-database.js";
             const db = getDatabase();
             
+            function updateScore () {
+              
+            }
+      
+      
             var list = document.getElementById("leaders");
             function AddItemToTable(name, score) {
               let ul = document.createElement("ul");
