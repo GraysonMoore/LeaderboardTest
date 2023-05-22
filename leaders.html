@@ -69,7 +69,7 @@
             
             console.log(localStorage.getItem("bestever"));
             
-            document.querySelector("#swift").addEventListener("click", ()=>{
+            /*document.querySelector("#swift").addEventListener("click", ()=>{
               var username = localStorage.getItem("playersname");
               const bestscore = localStorage.getItem("bestever");
               update(ref(db, "user/" + username), {
@@ -81,9 +81,9 @@
                 .catch((error)=>{
                   alert("unsuccessful, error" +error);
                 });
-            });
+            });*/
       
-            /*function UpdateData() {
+            function UpdateData() {
               var username = localStorage.getItem("playersname");
               const bestscore = localStorage.getItem("bestever");
               update(ref(db, "user/" + username), {
@@ -97,7 +97,7 @@
                 });
             }*/
       
-            //window.onload = UpdateData();
+            window.onload = "UpdateData()";
       
       
             var list = document.getElementById("leaders");
