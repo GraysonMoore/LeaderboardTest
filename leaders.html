@@ -30,7 +30,7 @@
     </style>
     <title>Free Rider Leaders</title>
   </head>
-  <body>
+  <body onload="UpdateData()">
     <h1>Free Rider Leaders:</h1><br>
 
       <div class="center" id="leaders">
@@ -68,20 +68,6 @@
             const db = getDatabase();
             
             console.log(localStorage.getItem("bestever"));
-            
-            /*document.querySelector("#swift").addEventListener("click", ()=>{
-              var username = localStorage.getItem("playersname");
-              const bestscore = localStorage.getItem("bestever");
-              update(ref(db, "user/" + username), {
-                  bestscore: bestscore
-                })
-                .then(()=>{
-                  alert("data updated successfully");
-                })
-                .catch((error)=>{
-                  alert("unsuccessful, error" +error);
-                });
-            });*/
       
             function UpdateData() {
               var username = localStorage.getItem("playersname");
@@ -97,7 +83,23 @@
                 });
             }
       
-            window.onload = "UpdateData()";
+            
+            
+            /*document.querySelector("#swift").addEventListener("click", ()=>{
+              var username = localStorage.getItem("playersname");
+              const bestscore = localStorage.getItem("bestever");
+              update(ref(db, "user/" + username), {
+                  bestscore: bestscore
+                })
+                .then(()=>{
+                  alert("data updated successfully");
+                })
+                .catch((error)=>{
+                  alert("unsuccessful, error" +error);
+                });
+            });*/
+      
+            
       
       
             var list = document.getElementById("leaders");
