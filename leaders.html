@@ -112,20 +112,23 @@
       
             
       
-      
+            var place = 0;
             var tbody = document.getElementById("tbody1");
             function AddItemToTable(name, score) {
-              let ul = document.createElement("ul");
-              let li1 = document.createElement("li");
-              let li2 = document.createElement("li");
+              let trow = document.createElement("trow");
+              let td1 = document.createElement("td");
+              let td2 = document.createElement("td");
+              let td3 = document.createElement("td");
               
-              li1.innerHTML = name;
-              li2.innerHTML = score;
+              td1.innerHTML = ++place;
+              td2.innerHTML = name;
+              td3.innerHTML = score;
               
-              ul.appendChild(li1);
-              ul.appendChild(li2);
+              trow.appendChild(td1);
+              trow.appendChild(td2);
+              trow.appendChild(td3);
               
-              list.appendChild(ul);
+              tbody.appendChild(trow);
             }
       
             function AddAllItemsToTable(TheName) {
