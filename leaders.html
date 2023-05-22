@@ -37,7 +37,15 @@
     <h1>Free Rider Leaders:</h1><br>
 
       <div class="center" id="leaders">
-        
+        <table>
+          <thead>
+            <th>Place</th>
+            <th>Name</th>
+            <th>Score</th>
+          </thead>
+          <tbody id="tbody1">
+          </tbody>
+        </table>
       </div><br><br><br>
     
     <button id="swift">Update</button><br><br><br>
@@ -105,7 +113,7 @@
             
       
       
-            var list = document.getElementById("leaders");
+            var tbody = document.getElementById("tbody1");
             function AddItemToTable(name, score) {
               let ul = document.createElement("ul");
               let li1 = document.createElement("li");
