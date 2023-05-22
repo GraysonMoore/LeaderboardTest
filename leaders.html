@@ -19,25 +19,27 @@
         color:lightblue;
         border-radius:10px;
         width:20%;
+        text-align:center;
       }
       .center {
         display:flex;
         text-align:center;
         flex-direction:column;
         justify-content:center;
+        list-style-type:none;
       }
       
     </style>
     <title>Free Rider Leaders</title>
   </head>
-  <body onload="UpdateData()">
+  <body>
     <h1>Free Rider Leaders:</h1><br>
 
       <div class="center" id="leaders">
         
-      </div><br>
+      </div><br><br><br>
     
-    <button id="swift">Update</button><br><br>
+    <button id="swift">Update</button><br><br><br>
 
       <div>
         <a href="index.html"><button id="close">Close</button></a>
@@ -67,7 +69,7 @@
             import { getDatabase, ref, get, set, update, child, query, orderByChild } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-database.js";
             const db = getDatabase();
             
-            console.log(localStorage.getItem("bestever"));
+            /*console.log(localStorage.getItem("bestever"));
       
             function UpdateData() {
               var username = localStorage.getItem("playersname");
@@ -81,11 +83,11 @@
                 .catch((error)=>{
                   alert("unsuccessful, error" +error);
                 });
-            }
+            }*/
       
             
             
-            /*document.querySelector("#swift").addEventListener("click", ()=>{
+            document.querySelector("#swift").addEventListener("click", ()=>{
               var username = localStorage.getItem("playersname");
               const bestscore = localStorage.getItem("bestever");
               update(ref(db, "user/" + username), {
@@ -97,7 +99,7 @@
                 .catch((error)=>{
                   alert("unsuccessful, error" +error);
                 });
-            });*/
+            });
       
             
       
