@@ -135,9 +135,9 @@
             }
             
             function GetAllDataOnce() {
-              const dbRef = ref(db);
+              const dbRef = query(ref(db, "user/"), orderByChild("bestscore"));
               
-              get(child(dbRef, "user/")).then((snapshot) => {
+              get(dbref).then((snapshot) => {
                 var names = [];
                 
                 snapshot.forEach(childSnapshot => {
