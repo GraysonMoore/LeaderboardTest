@@ -13,3 +13,28 @@ input {
   bottom: 50px;
   align-items:center;
 }
+
+<style>
+      body {
+        background-color:lightgray;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        text-align:center;
+      }
+      h1 {
+        text-align:center;
+        text-decoration:underline;
+      }
+      button {
+        background-color:blue;
+        color:lightblue;
+        border-radius:10px;
+        width:20%;
+        text-align:center;
+      }
+      #leaders {
+        list-style-type:none;
+      }
+      
+    </style>
