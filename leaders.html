@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
     <script src="script.js"></script>
     <style>
       body {
+        font-family: "Permanent Marker", cursive;
         background-color:lightgray;
         display:flex;
         flex-direction:column;
@@ -23,11 +27,14 @@
       }
       table {
         display: flex;
-        text-align:center;
         justify-content:center;
         width: 100%;
       }
-      td, th {
+      th {
+        text-align:center;
+        padding: 10px;
+      }
+      td {
         text-align:center;
         padding: 10px;
       }
@@ -45,7 +52,7 @@
             <th>Place</th>
             <th>Name</th>
             <th>Score</th>
-          </thead>
+          </thead><br>
           <tbody id="tbody">
           </tbody>
         </table>
@@ -136,6 +143,9 @@
             }
       
             function AddAllItemsToTable(TheName) {
+              TheName.reverse();
+              place=0;
+              tbody.innerHTML = "";
               TheName.forEach(element => {
                 AddItemToTable(element.username, element.bestscore);
               });
