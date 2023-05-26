@@ -92,7 +92,7 @@
                 localStorage.setItem("playersname", username);
                 set(ref(db, "user/" + username), {
                   username: username,
-                  bestscore: Number(bestscore)
+                  bestscore: bestscore
                 })
                 .then(()=>{
                   location.href = "leaders.html";
