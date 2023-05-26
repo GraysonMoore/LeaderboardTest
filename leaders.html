@@ -42,7 +42,7 @@
       table {
         width: 80%;
         font-family: "Permanent Marker", cursive;
-        margin-top:4%;
+        margin-top:0%;
         margin-left:10%;
       }
       th {
@@ -169,7 +169,7 @@
             }
             
             function GetAllDataOnce() {
-              const dbref = query(ref(db, "user/"), orderByValue("bestscore"));
+              const dbref = query(ref(db, "user/"), orderByChild("bestscore"));
               
               get(dbref).then((snapshot) => {
                 var names = [];
