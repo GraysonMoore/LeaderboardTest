@@ -85,7 +85,7 @@
             
             document.querySelector("#insertdata").addEventListener("click", ()=>{
               const username = document.getElementById("name").value;
-              const bestscore = localStorage.getItem("bestever");
+              const bestscore = Number(localStorage.getItem("bestever"));
               if (!username) {
                 alert("Enter a name!");
               } else {
