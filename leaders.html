@@ -123,20 +123,21 @@
             }*/
       
             
-            
-            document.querySelector("#swift").addEventListener("click", ()=>{
+            function update() {
+            //document.querySelector("#swift").addEventListener("click", ()=>{
               var username = localStorage.getItem("playersname");
               const bestscore = localStorage.getItem("bestever");
               update(ref(db, "user/" + username), {
                   bestscore: Number(bestscore)
                 })
                 .then(()=>{
-                  location.reload();
+                  //It should work!
                 })
                 .catch((error)=>{
-                  alert("unsuccessful, error" +error);
+                  alert("Unsuccessful, Error" +error);
                 });
-            });
+            //});
+            }
       
             
       
@@ -182,7 +183,7 @@
             }
             
             window.onload = GetAllDataOnce();
-            
+            window.onload = update();
       
       
             
