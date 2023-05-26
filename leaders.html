@@ -72,6 +72,7 @@
     
 
       <div class="buttons">
+        <button id="swift">Clear ALL!</button>
         <a href="index.html"><button id="close">Close</button></a>
       </div>
     <script type="module">
@@ -115,9 +116,11 @@
                 });
             }*/
       
-            
+            document.querySelector("#swift").addEventListener("click", ()=>{
+              localStorage.clear();
+            });
             function UpdateAllYourData() {
-            //document.querySelector("#swift").addEventListener("click", ()=>{
+            
               var username = localStorage.getItem("playersname");
               const bestscore = localStorage.getItem("bestever");
               update(ref(db, "user/" + username), {
@@ -129,7 +132,7 @@
                 .catch((error)=>{
                   alert("Unsuccessful, Error" +error);
                 });
-            //});
+            
             }
       
             
