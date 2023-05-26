@@ -42,7 +42,7 @@
       table {
         width: 80%;
         font-family: "Permanent Marker", cursive;
-        margin-top:-10px;
+        margin-top:-20px;
         margin-left:10%;
       }
       th {
@@ -128,7 +128,7 @@
               var username = localStorage.getItem("playersname");
               const bestscore = localStorage.getItem("bestever");
               update(ref(db, "user/" + username), {
-                  bestscore: Number(bestscore)
+                  bestscore: bestscore
                 })
                 .then(()=>{
                   location.reload();
