@@ -12,7 +12,7 @@ document.body.appendChild(limg);*/
 var s=this.add.text(e.centerX,100,"Best Score",t);s.setOrigin(.5),s.setFontSize(40),s.setColor("#000000"),this.bestScoreValueText=s;
 const bestd = h.default.lifetimeScore.distanceScore;
 const bestt = h.default.lifetimeScore.tricksScore;
-const bestever = bestd + bestt;
+const bestever = Number(bestd + bestt);
 console.log(bestever);
 localStorage.setItem("bestever", bestever);
 
