@@ -126,7 +126,7 @@
             
             document.querySelector("#swift").addEventListener("click", ()=>{
               var username = localStorage.getItem("playersname");
-              const bestscore = localStorage.getItem("bestever");
+              const bestscore = Number(localStorage.getItem("bestever"));
               update(ref(db, "user/" + username), {
                   bestscore: bestscore
                 })
