@@ -8,6 +8,9 @@
         location.href="leaders.html";
       }
     </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
     <style>
       body {
         background-color:lightgray;
@@ -16,9 +19,9 @@
         flex-direction:column;
         justify-content:center;
       }
-      h1 {
+      h3 {
         text-align:center;
-        text-decoration:underline;
+        font-family: "Permanent Marker", cursive;
       }
       button {
         background-color:royalblue;
@@ -42,6 +45,10 @@
         flex-direction:column;
         justify-content:center;
       }
+      p {
+        font-size: 10px;
+        text-align:center;
+      }
     </style>
     
     <title>Free Rider Leaders</title>
@@ -49,7 +56,8 @@
   <body>
     <div>
       <h3>Enter Your Name To Get A Spot On The Leaderboard!</h3>
-      <input type="text" id="name" placeholder="Nickname, No Special Characters" class="nameplace"><br><br><br>
+      <input type="text" id="name" placeholder="Nickname, No Special Characters" class="nameplace"><br>
+      <p>(This name can't be changed)</p><br><br>
       <button id="insertdata" class="createaccount">OK</button>
     </div>
         
