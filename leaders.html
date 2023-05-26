@@ -103,7 +103,7 @@
             
             
             
-            import { getDatabase, ref, get, set, update, child, query, orderByChild, orderByValue, limitToFirst } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-database.js";
+            import { getDatabase, ref, get, set, update, child, query, orderByChild, orderByValue, limitToLast } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-database.js";
             const db = getDatabase();
             
             /*console.log(localStorage.getItem("bestever"));
@@ -169,7 +169,7 @@
             }
             
             function GetAllDataOnce() {
-              const dbref = query(ref(db, "user/"), orderByChild("bestscore"), limitToFirst(7));
+              const dbref = query(ref(db, "user/"), orderByChild("bestscore"), limitToLast(7));
               
               get(dbref).then((snapshot) => {
                 var names = [];
