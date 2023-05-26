@@ -85,14 +85,14 @@
             
             document.querySelector("#insertdata").addEventListener("click", ()=>{
               const username = document.getElementById("name").value;
-              const bestscore = Number(localStorage.getItem("bestever"));
+              const bestscore = localStorage.getItem("bestever");
               if (!username) {
                 alert("Enter a name!");
               } else {
                 localStorage.setItem("playersname", username);
                 set(ref(db, "user/" + username), {
                   username: username,
-                  bestscore: bestscore
+                  bestscore: Number(bestscore)
                 })
                 .then(()=>{
                   location.href = "leaders.html";
