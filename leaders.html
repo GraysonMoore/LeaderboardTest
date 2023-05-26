@@ -31,10 +31,18 @@
         border-radius:10px;
         width:20%;
         text-align:center;
+        font-size:15px;
+      }
+      #swift {
+        margin-right:50px;
+      }
+      .buttons {
+        text-align:center;
       }
       table {
         width: 80%;
         font-family: "Permanent Marker", cursive;
+        margin-top:4%;
         margin-left:10%;
       }
       th {
@@ -69,8 +77,8 @@
     
     
 
-      <div>
-        <button id="swift">Update</button><br><br><br>
+      <div class="buttons">
+        <button id="swift">Update</button>
         <a href="index.html"><button id="close">Close</button></a>
       </div>
     <script type="module">
@@ -95,7 +103,7 @@
             
             
             
-            import { getDatabase, ref, get, set, update, child, query, orderByChild } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-database.js";
+            import { getDatabase, ref, get, set, update, child, query, orderByChild, orderByValue } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-database.js";
             const db = getDatabase();
             
             /*console.log(localStorage.getItem("bestever"));
@@ -161,7 +169,7 @@
             }
             
             function GetAllDataOnce() {
-              const dbref = query(ref(db, "user/"), orderByChild("bestscore"));
+              const dbref = query(ref(db, "user/"), orderByValue("bestscore"));
               
               get(dbref).then((snapshot) => {
                 var names = [];
